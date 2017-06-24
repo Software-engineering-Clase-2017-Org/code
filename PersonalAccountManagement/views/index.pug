@@ -1,0 +1,120 @@
+extends layout
+
+block content
+  h2= title
+  hr
+  .row
+    .col-md-8.left
+      h3 注册
+      hr
+      form#frm-regi
+        .form-group
+          label(for='uname-regi') 用户名
+          input.form-control#uname-regi(name='user_name', value='my_name_1', required='required')
+        .form-group
+          label(for='id_no-update') 身份证号码
+          input.form-control#id_no-update(name='id_no', value='', required='required')
+        .form-group
+          label(for='email-regi') 注册邮箱
+          input.form-control#email-regi(name='email', value='', required='required', placeholder='')
+        .form-group
+          label(for='sel-regi') 用户类型
+          select.form-control#sel-regi(name='user_type', required='required')
+            option(value='0') 管理员
+            option(value='1') 卖家
+            option(value='2', selected='selected') 买家
+        .form-group
+          label(for='upass-regi') 密码
+          input.form-control#upass-regi(name='user_pass', type='password', value='psw', required='required')
+        .form-group
+          input.btn.btn-default#btn-regi-submit(type='button', value='注册')
+
+      h3 用户认证
+      hr
+      form#frm-auth
+        .form-group
+          label(for='uname') 用户名
+          input.form-control#uname(name='user_name', value='my_name', required='required')
+        .form-group
+          label(for='upass') 密码
+          input.form-control#upass(name='user_pass', type='password', value='psw', required='required')
+        .form-group
+          label(for='sel-auth') 用户类型
+          select.form-control#sel-auth(name='user_type', required='required')
+            option(value='0') 管理员
+            option(value='1') 卖家
+            option(value='2', selected='selected') 买家
+        .form-group
+          input.btn.btn-default#btn-auth-submit(type='button', value='提交')
+      //- 
+      h3 获取用户信息
+      hr
+      a.btn.btn-default#btn-user-info 点击获取当前登录用户信息
+
+      h3 挂失身份证
+      hr
+      form#frm-lossid
+        .form-group
+          label(for='id_no') 身份证号码
+          input.form-control#id_no(name='id_no', value='', required='required')
+        .form-group
+          label(for='upass') 密码
+          input.form-control#upass(name='user_pass', value='psw', type='password', required='required')
+        .form-group
+          input.btn.btn-danger#btn-lossid-submit(type='button', value='挂失')
+
+      h3 忘记密码
+      hr
+      form#frm-forgotpsw
+        .form-group
+          label(for='sel-auth') 用户类型
+          select.form-control#sel-auth(name='user_type', required='required')
+            option(value='0') 管理员
+            option(value='1') 卖家
+            option(value='2', selected='selected') 买家
+        .form-group
+          label(for='email') 注册邮箱
+          input.form-control#email(name='email', value='', required='required', placeholder='如果邮箱存在，则会发送找回密码的邮件')
+        .form-group
+          input.btn.btn-danger#btn-fogotpsw-submit(type='button', value='忘记密码')
+
+      h3 充值
+      hr
+      form#frm-recharge
+        .form-group
+          label(for='amount') 金额
+          input.form-control#amount(name='amount', value='', required='required', placeholder='金额需要大于0')
+        .form-group
+          input.btn.btn-default#btn-recharge-submit(type='button', value='充值')
+
+      h3 更改用户信息
+      hr
+      form#frm-update
+        .form-group
+          label(for='uname-update') 用户名
+          input.form-control#uname-update(name='user_name', value='my_name', placeholder='留空不修改')
+        .form-group
+          label(for='upass-update') 密码
+          input.form-control#upass-update(name='user_pass', type='password', value='psw', placeholder='留空不修改')
+        .form-group
+          label(for='email-update') 邮箱
+          input.form-control#email-update(name='email', value='', placeholder='留空不修改')
+        .form-group
+          label(for='id_no-update') 身份证号码
+          input.form-control#id_no-update(name='id_no', value='', placeholder='留空不修改')
+        .form-group
+          label(for='pay_psw') 支付密码
+          input.form-control#pay_psw(name='pay_psw', value='', type='password', placeholder='留空不修改')
+        .form-group
+          input.btn.btn-default#btn-update-submit(type='button', value='提交')
+
+      h3 注销登录
+      hr
+      form#frm-logout
+        .form-group
+          input.btn.btn-primary#btn-logout-submit(type='button', value='注销登录')
+
+    .col-md-4
+      h3 返回值
+      hr
+      textarea.form-control#res(rows=30)

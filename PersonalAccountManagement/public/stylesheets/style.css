@@ -1,0 +1,13 @@
+body {
+  background: #eee;
+}
+.container {
+  background: #fff;
+}
+h3:not(:nth-child(1)) {
+  margin-top: 1.5em;
+}
+.left {
+  max-height: calc(100vh - 40px);
+  overflow-y: scroll;
+}

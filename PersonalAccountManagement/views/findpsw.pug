@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h2= title
+  hr
+  .row
+    .col-md-8.left
+      h3 找回密码
+      hr
+      form#frm-findpsw
+        .form-group(style='display: none')
+          input.form-control(name='k', value=k, required='required')
+        .form-group(style='display: none')
+          //- label(for='sel-regi') 用户类型
+          input(name='ut', value=ut, required='required')
+        .form-group
+          label(for='upass-regi') 新密码
+          input.form-control#upass(name='p', type='password', value='psw', required='required')
+        .form-group
+          input.btn.btn-default#btn-findpsw-submit(type='button', value='修改')
+    .col-md-4
+      h3 返回值
+      hr
+      textarea.form-control#res(rows=30)
